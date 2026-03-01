@@ -61,6 +61,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         || Ok(TimeServer::new()),
         LocalSessionManager::default().into(),
         StreamableHttpServerConfig {
+            stateful_mode: false,
             cancellation_token: ct.child_token(),
             ..Default::default()
         },
